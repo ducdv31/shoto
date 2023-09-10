@@ -1,0 +1,103 @@
+apply plugin : 'com.android.application'
+
+apply from : '../common.gradle'
+
+android {
+    defaultConfig {
+        applicationId 'com.hjq.demo'
+
+        resConfigs 'xxhdpi'
+
+        proguardFiles 'proguard-sdk.pro', 'proguard-app.pro'
+    }
+
+    signingConfigs {
+        config {
+            storeFile file(StoreFile)
+            storePassword StorePassword
+            keyAlias KeyAlias
+            keyPassword KeyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            jniDebuggable true
+            zipAlignEnabled false
+            shrinkResources false
+            minifyEnabled false
+            signingConfig signingConfigs.config
+            addManifestPlaceholders([
+                    'app_name'    :    'Demo'
+            ])
+
+        }
+
+        preview.initWith(debug)
+
+        preview {
+            addManifestPlaceholders([
+                    'app_name'    :    'Demo'
+            ])
+        }
+
+        release {
+            debuggable false
+            jniDebuggable false
+            zipAlignEnabled true
+            shrinkResources true
+            minifyEnabled true
+            signingConfig signingConfigs.config
+            addManifestPlaceholders([
+                    'app_name'    :    '@string/app_name'
+            ])
+            ndk {
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
+            }
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/*******'
+    }
+
+
+    applicationVariants.configureEach { variant ->
+        variant.outputs.all { output ->
+            outputFileName = rootProject.getName() + '_v' + variant.versionName + '_' + variant.buildType.name
+            if (variant.buildType.name == buildTypes.release.getName()) {
+                outputFileName += '_' + new Date().format('MMdd')
+            }
+            outputFileName += '.apk'
+        }
+    }
+
+    //View Binding
+    buildFeatures {
+        viewBinding true
+        //noinspection DataBindingWithoutKapt
+        dataBinding true
+    }
+}
+
+
+dependencies {
+    implementation project(':library:base')
+    implementation project(':library:widget')
+    implementation project(':library:stateprogressbar')
+    implementation project(':libusbcamera')
+
+//    implementation 'com.jakewharton:butterknife:10.2.1'
+//    kapt 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    implementation 'com.github.getActivity:TitleBar:9.2'
+    implementation 'com.github.getActivity:ShapeView:6.0'
+    implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+    implementation 'com.airbnb.android:lottie:4.1.0'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0@aar'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+    implementation "org.jetbrains.anko:anko:0.10.8"
+    implementation 'com.github.getActivity:ShapeView:9.0'
+    implementation 'com.kyleduo.switchbutton:library:2.1.0'
+}

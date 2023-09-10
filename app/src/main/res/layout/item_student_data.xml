@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:id="@+id/llRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0.4"
+                android:id="@+id/tvNumber"
+                android:gravity="center"
+                android:text="STT"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:id="@+id/tvName"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Họ và tên"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:text="Ngày sinh"
+                android:id="@+id/tvBirthday"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/tvExams"
+                android:text="Kỳ Sh"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:id="@+id/tvCode"
+                android:gravity="center"
+                android:text="Số\nBáo danh"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:id="@+id/tvCodeDk"
+                android:gravity="center"
+                android:text="Mã ĐK"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:id="@+id/tvTime"
+                android:gravity="center"
+                android:text="Ngày thi"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:id="@+id/tvTimeStart"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:text="TG\nBắt Đầu"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:id="@+id/tvTimeEnd"
+                android:text="TG\nKết Thúc"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+            <View
+                android:layout_width="@dimen/dp_1"
+                android:layout_height="match_parent"
+                android:background="@color/gray" />
+
+            <com.hjq.demo.widget.AppTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingVertical="@dimen/dp_8"
+                android:layout_gravity="center"
+                android:layout_weight="0.8"
+                android:id="@+id/tvTotalPoint"
+                android:gravity="center"
+                android:text="Tổng\nđiểm thi"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_10" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1"
+            android:background="@color/gray" />
+
+
+    </LinearLayout>
+</layout>

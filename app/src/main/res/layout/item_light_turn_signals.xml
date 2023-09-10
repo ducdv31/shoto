@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_8"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llLightLeft"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:background="@drawable/bg_left_cluster"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imvLightLeft"
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:src="@drawable/ic_light_left" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivWarring"
+                android:layout_width="@dimen/dp_32"
+                android:layout_height="@dimen/dp_32"
+                android:src="@drawable/btn_ers">
+
+            </ImageView>
+
+            <LinearLayout
+                android:id="@+id/llLightRight"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_marginHorizontal="@dimen/dp_16"
+                android:background="@drawable/bg_left_cluster"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/imvLightRight"
+                    android:layout_width="@dimen/dp_8"
+                    android:layout_height="@dimen/dp_8"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:src="@drawable/ic_light_right" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivBrakeLight"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginHorizontal="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:src="@drawable/ic_brake_light" />
+
+                <ImageView
+                    android:id="@+id/ivNoSeat"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginHorizontal="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:src="@drawable/ic_no_seat" />
+
+                <ImageView
+                    android:id="@+id/ivFuelLamp"
+                    android:layout_width="@dimen/dp_16"
+                    android:layout_height="@dimen/dp_16"
+                    android:layout_marginHorizontal="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_4"
+                    android:src="@drawable/ic_fuel_lamp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivGear"
+                android:layout_width="@dimen/dp_24"
+                android:layout_height="@dimen/dp_24"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/dp_4"
+                android:src="@drawable/ic_gear_p" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>

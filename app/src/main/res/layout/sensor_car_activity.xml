@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:background="@color/bg_hover_dark">
+
+            <ImageView
+                android:id="@+id/imvBack"
+                android:layout_width="@dimen/dp_20"
+                android:layout_height="@dimen/dp_20"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:src="@drawable/ic_back" />
+
+            <com.hjq.demo.widget.AppTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Trạng thái cảm biến trên xe"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14">
+
+            </com.hjq.demo.widget.AppTextViewBold>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/bg_center_indicator"
+                    android:orientation="horizontal">
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:layout_weight="1"
+                        android:text="Thiết bị chấm điểm phiên thi"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_14" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:src="@drawable/ic_check" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/bg_center_indicator"
+                    android:orientation="horizontal">
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:layout_weight="1"
+                        android:text="Cảm biến tiệm cận bánh trước - bên lái"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:src="@drawable/ic_warning" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/bg_center_indicator"
+                    android:orientation="horizontal">
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:layout_weight="1"
+                        android:text="Tay điều kiển bài thi đường trường"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:src="@drawable/ic_cancel" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@drawable/bg_center_indicator"
+                    android:orientation="horizontal">
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:layout_weight="1"
+                        android:text="Cảm biến tiệm cận bánh trước - bên phụ"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_14" />
+
+
+                    <ImageView
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center_vertical"
+                        android:layout_margin="@dimen/dp_8"
+                        android:src="@drawable/ic_warning" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

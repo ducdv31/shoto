@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_32"
+            android:background="@color/bg_hover_dark">
+
+            <ImageView
+                android:id="@+id/imvBack"
+                android:layout_width="@dimen/dp_16"
+                android:layout_height="@dimen/dp_16"
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="@dimen/dp_8"
+                android:src="@drawable/ic_back" />
+
+            <com.hjq.demo.widget.AppTextViewBold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textAllCaps="true"
+                android:text="Danh sách phiên thi trên thiết bị"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14">
+
+            </com.hjq.demo.widget.AppTextViewBold>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/dp_8"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:background="@drawable/bg_border"
+                android:orientation="vertical">
+
+                <com.hjq.demo.widget.AppTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/dp_8"
+                    android:text="Thí sinh"
+                    android:textAllCaps="true"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:background="@color/bg_hover_dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_1"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ID phiên: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="123423434_1"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Họ tên: "
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Đang thi"
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_1"
+                    android:background="@color/bg_hover_dark"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày sinh: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12-1-1999"
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Giới tính: "
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nam"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="@dimen/dp_4"
+                        android:text="-"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số BD: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="17"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="@dimen/dp_1"
+                    android:background="@color/bg_hover_dark"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CSĐT: "
+
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12133-Trung tâm Hùng Vương"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="@dimen/dp_112"
+                    android:layout_height="@dimen/dp_136"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ic_avatar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/dp_8"
+                android:layout_weight="1"
+                android:background="@drawable/bg_border"
+                android:orientation="vertical">
+
+                <com.hjq.demo.widget.AppTextViewBold
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAllCaps="true"
+                    android:layout_margin="@dimen/dp_8"
+                    android:text="Nội dung chi tiết"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:padding="@dimen/dp_8"
+                    android:layout_marginHorizontal="@dimen/dp_1"
+                    android:background="@color/bg_hover_dark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ngày thi: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="21-2-2023"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="@dimen/dp_88"
+                        android:layout_height="wrap_content"
+                        android:text="Thời gian thi: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+
+                            <com.hjq.demo.widget.AppTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Bắt đầu"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:text="12:00:00"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+
+                            <com.hjq.demo.widget.AppTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Kết thúc"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:text="12:00:00"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="@dimen/dp_1"
+                    android:background="@color/bg_hover_dark"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="@dimen/dp_88"
+                        android:layout_height="wrap_content"
+                        android:text="Tổng thời gian: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="12p51s"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="horizontal">
+
+                            <com.hjq.demo.widget.AppTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Tổng điểm: "
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/dp_4"
+                                android:text="88"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_8">
+
+                    <com.hjq.demo.widget.AppTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="TTSH: "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/sp_10" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="11601 - TTSH và đào tạo Số 1 Hà Nội"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/dp_8"
+                    android:background="@color/black"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_border"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_marginHorizontal="@dimen/dp_1"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="@dimen/dp_32"
+                                android:layout_height="@dimen/dp_24"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="STT"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <View
+                                android:layout_width="@dimen/dp_1"
+                                android:layout_height="match_parent"
+                                android:background="@color/gray" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="@dimen/dp_72"
+                                android:layout_height="@dimen/dp_24"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Thời gian"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <View
+                                android:layout_width="@dimen/dp_1"
+                                android:layout_height="match_parent"
+                                android:background="@color/gray" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_24"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textAllCaps="true"
+                                android:text="Nội dung"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+
+                            <View
+                                android:layout_width="@dimen/dp_1"
+                                android:layout_height="match_parent"
+                                android:background="@color/gray" />
+
+                            <com.hjq.demo.widget.AppTextViewBold
+                                android:layout_width="0dp"
+                                android:layout_height="@dimen/dp_24"
+                                android:layout_gravity="center"
+                                android:layout_weight="0.5"
+                                android:gravity="center"
+                                android:text="Ghi chú"
+                                android:textAllCaps="true"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/sp_10" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_1"
+                            android:background="@color/gray" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rclExam"
+                            android:layout_marginHorizontal="@dimen/dp_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black"
+            android:padding="@dimen/dp_8"
+            android:weightSum="2">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <include
+                    android:id="@+id/llDataLeft"
+                    layout="@layout/item_data_left" />
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="@dimen/dp_48">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:background="@drawable/center_infor">
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:id="@+id/tvTotalEngine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/dp_2"
+                            android:paddingStart="@dimen/dp_2"
+                            android:paddingEnd="@dimen/dp_2"
+                            android:text="1000"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_8" />
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="@dimen/dp_4"
+                            android:text="r/min"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_8" />
+
+                    </LinearLayout>
+
+                    <com.hjq.demo.widget.GaugeView
+                        android:id="@+id/gvEngine"
+                        android:layout_width="@dimen/dp_164"
+                        android:layout_height="@dimen/dp_88" />
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true">
+
+                    <include
+                        android:id="@+id/llDataRight"
+                        layout="@layout/item_data_right" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="@dimen/dp_48">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_32"
+                        android:background="@drawable/center_infor">
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:id="@+id/tvTotalSpeed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/dp_2"
+                            android:paddingStart="@dimen/dp_2"
+                            android:paddingEnd="@dimen/dp_2"
+                            android:text="1000"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_8" />
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingEnd="@dimen/dp_4"
+                            android:text="Km/h"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_8" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/dp_72"
+                        android:background="@drawable/center_infor">
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:id="@+id/tvTotalDistance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="@dimen/dp_4"
+                            android:text="1000"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_10" />
+
+                        <com.hjq.demo.widget.AppTextViewBold
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingVertical="@dimen/dp_4"
+                            android:paddingEnd="@dimen/dp_4"
+                            android:text="Km"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/sp_8" />
+
+                    </LinearLayout>
+
+                    <com.hjq.demo.widget.GaugeView
+                        android:id="@+id/gvSpeed"
+                        android:layout_width="@dimen/dp_164"
+                        android:layout_height="@dimen/dp_88" />
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <include
+                android:id="@+id/llLightTurn"
+                layout="@layout/item_light_turn_signals" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/bg_hover_dark"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnWifi"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_gms" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelGMS"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnWifi"
+                        android:layout_alignBottom="@+id/btnWifi"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvGMS"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Wifi"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnServer"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_server" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelServer"
+                        android:layout_width="@dimen/dp_8"
+                        android:visibility="gone"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnServer"
+                        android:layout_alignBottom="@+id/btnServer"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvServer"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Server"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnSave"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_memory" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelSave"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnSave"
+                        android:layout_alignBottom="@+id/btnSave"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvSave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Bộ nhớ"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnCamera"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_camera" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelCamera"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:visibility="gone"
+                        android:layout_alignEnd="@+id/btnCamera"
+                        android:layout_alignBottom="@+id/btnCamera"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvCamera"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Camera"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnRfid"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_rfid" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelRfid"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:visibility="gone"
+                        android:layout_alignEnd="@+id/btnRfid"
+                        android:layout_alignBottom="@+id/btnRfid"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvRfid"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="RFID"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnPrinter"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_printer" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelPrinter"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnPrinter"
+                        android:layout_alignBottom="@+id/btnPrinter"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvPrinter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:text="Máy in"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnLogger"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_logger" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelLogger"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnLogger"
+                        android:layout_alignBottom="@+id/btnLogger"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvLogger"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Logger"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_gravity="center">
+
+                    <ImageButton
+                        android:id="@+id/btnGPS"
+                        android:layout_width="@dimen/dp_20"
+                        android:layout_height="@dimen/dp_20"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ripple_animation_button_back_header"
+                        android:gravity="center"
+                        android:src="@drawable/btn_location" />
+
+                    <ImageView
+                        android:id="@+id/imvCancelGPS"
+                        android:layout_width="@dimen/dp_8"
+                        android:layout_height="@dimen/dp_8"
+                        android:layout_alignEnd="@+id/btnGPS"
+                        android:layout_alignBottom="@+id/btnGPS"
+                        android:src="@drawable/ic_search_global_prestate_delete" />
+
+                </RelativeLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvGPS"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="GPS"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:background="@drawable/ic_pin">
+
+                    <com.hjq.demo.widget.AppTextViewBold
+                        android:layout_width="wrap_content"
+                        android:text="12V"
+                        android:layout_marginTop="@dimen/dp_2"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="@dimen/sp_8"
+                        android:textColor="@color/red"
+                        android:layout_height="wrap_content"/>
+
+                </LinearLayout>
+
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvVol"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Điện áp"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/btnSetting"
+                    android:layout_width="@dimen/dp_22"
+                    android:layout_height="@dimen/dp_22"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:background="@drawable/ripple_animation_button_back_header"
+                    android:gravity="center"
+                    android:src="@drawable/ic_settings" />
+
+                <com.hjq.demo.widget.AppTextView
+                    android:id="@+id/tvSetting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Cài đặt"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/sp_8" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</layout>

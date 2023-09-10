@@ -1,0 +1,26 @@
+ext {
+    def SERVER_TYPE_TEST = "test"
+    def SERVER_TYPE_PREVIEW = "pre"
+    def SERVER_TYPE_PRODUCT = "product"
+
+    def taskName = project.gradle.startParameter.taskNames[0]
+    if (taskName == null) {
+        taskName = ""
+    }
+
+    println "GradleLog TaskNameOutput " + taskName
+
+    def serverType = SERVER_TYPE_PRODUCT
+
+    if (taskName.endsWith("Debug")) {
+        serverType = SERVER_TYPE_TEST
+    } else if (taskName.endsWith("Preview")) {
+        serverType = SERVER_TYPE_PREVIEW
+    }
+
+    if (project.hasProperty("ServerType")) {
+        serverType = project.properties["ServerType"]
+    }
+
+    println "GradleLog ServerTypeOutput " + serverType
+}
