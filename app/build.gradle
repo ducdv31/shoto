@@ -90,6 +90,7 @@ dependencies {
 
 //    implementation 'com.jakewharton:butterknife:10.2.1'
 //    kapt 'com.jakewharton:butterknife-compiler:10.2.0'
+    implementation files("aars/common-4.1.1.aar")
 
     implementation 'com.github.getActivity:TitleBar:9.2'
     implementation 'com.github.getActivity:ShapeView:6.0'

@@ -42,6 +42,11 @@
         </provider>
 
         <activity
+            android:name=".ui.activity.USBCameraActivity"
+            android:screenOrientation="landscape"
+            android:exported="false">
+        </activity>
+        <activity
             android:name=".ui.activity.SplashActivity"
             android:launchMode="singleTop"
             android:screenOrientation="landscape"

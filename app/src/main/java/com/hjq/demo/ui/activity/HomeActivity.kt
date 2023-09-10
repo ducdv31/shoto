@@ -1,5 +1,6 @@
 package com.hjq.demo.ui.activity
 
+import android.content.Intent
 import android.os.Looper
 import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
@@ -75,6 +76,9 @@ class HomeActivity : AppActivity() {
 
         binding.llBody.gvEngine.maxValue = 8f
         binding.llBody.gvEngine.markCount = 8
+        binding.llBody.btCamera.setOnClickListener {
+            startActivity(Intent(this, USBCameraActivity::class.java))
+        }
         runnableEngine = Runnable {
             if (currentNumberEngine <= 8) {
                 binding.llBody.tvTotalEngine.text = "${(currentNumberEngine * 1000)}"
