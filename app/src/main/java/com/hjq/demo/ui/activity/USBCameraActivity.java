@@ -51,7 +51,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     private ActivityUsbcameraBinding binding;
 
     private UVCCameraHelper mCameraHelper;
-//    private CameraViewInterface mUVCCameraView;
+    private CameraViewInterface mUVCCameraView;
     private AlertDialog mDialog;
 
     private boolean isRequest;
@@ -124,11 +124,11 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
 
         // step.1 initialize UVCCameraHelper
-//        mUVCCameraView = (CameraViewInterface) binding.cameraView;
-        binding.cameraView.setCallback(this);
+        mUVCCameraView = (CameraViewInterface) binding.cameraView;
+        mUVCCameraView.setCallback(this);
         mCameraHelper = UVCCameraHelper.getInstance();
         mCameraHelper.setDefaultFrameFormat(UVCCameraHelper.FRAME_FORMAT_MJPEG);
-        mCameraHelper.initUSBMonitor(this, binding.cameraView, listener);
+        mCameraHelper.initUSBMonitor(this, mUVCCameraView, listener);
 
         mCameraHelper.setOnPreviewFrameListener(new AbstractUVCCameraHandler.OnPreViewResultListener() {
             @Override
@@ -376,7 +376,7 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
     @Override
     public void onSurfaceCreated(CameraViewInterface view, Surface surface) {
         if (!isPreview && mCameraHelper.isCameraOpened()) {
-            mCameraHelper.startPreview(binding.cameraView);
+            mCameraHelper.startPreview(mUVCCameraView);
             isPreview = true;
         }
     }
