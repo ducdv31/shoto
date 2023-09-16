@@ -2,42 +2,24 @@ package com.hjq.demo.ui.activity;
 
 import android.hardware.usb.UsbDevice;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Looper;
 
-import android.text.TextUtils;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.Surface;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
 import android.widget.SeekBar;
-import android.widget.Switch;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.hjq.demo.R;
-import com.hjq.demo.app.AppApplication;
 import com.hjq.demo.databinding.ActivityUsbcameraBinding;
 import com.jiangdg.usbcamera.UVCCameraHelper;
 import com.jiangdg.usbcamera.utils.FileUtils;
 import com.serenegiant.usb.CameraDialog;
-import com.serenegiant.usb.Size;
 import com.serenegiant.usb.USBMonitor;
 import com.serenegiant.usb.common.AbstractUVCCameraHandler;
-import com.serenegiant.usb.encoder.RecordParams;
 import com.serenegiant.usb.widget.CameraViewInterface;
-import com.serenegiant.widget.IAspectRatioView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -52,7 +34,6 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     private UVCCameraHelper mCameraHelper;
     private CameraViewInterface mUVCCameraView;
-    private AlertDialog mDialog;
 
     private boolean isRequest;
     private boolean isPreview;
@@ -99,10 +80,6 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
                             e.printStackTrace();
                         }
                         Looper.prepare();
-                        if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                            binding.seekbarBrightness.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_BRIGHTNESS));
-                            binding.seekbarContrast.setProgress(mCameraHelper.getModelValue(UVCCameraHelper.MODE_CONTRAST));
-                        }
                         Looper.loop();
                     }
                 }).start();
@@ -140,45 +117,6 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
 
     private void initView() {
         setSupportActionBar(binding.toolbar);
-
-        binding.seekbarBrightness.setMax(100);
-        binding.seekbarBrightness.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_BRIGHTNESS,progress);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
-        binding.seekbarContrast.setMax(100);
-        binding.seekbarContrast.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-            @Override
-            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if(mCameraHelper != null && mCameraHelper.isCameraOpened()) {
-                    mCameraHelper.setModelValue(UVCCameraHelper.MODE_CONTRAST,progress);
-                }
-            }
-
-            @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-
-            }
-
-            @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-
-            }
-        });
     }
 
     @Override
@@ -197,150 +135,6 @@ public class USBCameraActivity extends AppCompatActivity implements CameraDialog
         if (mCameraHelper != null) {
             mCameraHelper.unregisterUSB();
         }
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_toobar, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.menu_takepic:
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened()) {
-                    showShortMsg("sorry,camera open failed");
-                    return super.onOptionsItemSelected(item);
-                }
-                String picPath = FileUtils.ROOT_PATH + "/" + AppApplication.DIRECTORY_NAME +"/images/"
-                        + System.currentTimeMillis() + UVCCameraHelper.SUFFIX_JPEG;
-
-                mCameraHelper.capturePicture(picPath, new AbstractUVCCameraHandler.OnCaptureListener() {
-                    @Override
-                    public void onCaptureResult(String path) {
-                        if(TextUtils.isEmpty(path)) {
-                            return;
-                        }
-                        new Handler(getMainLooper()).post(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(USBCameraActivity.this, "save path:"+path, Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                    }
-                });
-
-                break;
-            case R.id.menu_recording:
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened()) {
-                    showShortMsg("sorry,camera open failed");
-                    return super.onOptionsItemSelected(item);
-                }
-                if (!mCameraHelper.isPushing()) {
-                    String videoPath = FileUtils.ROOT_PATH + "/" + AppApplication.DIRECTORY_NAME +"/videos/" + System.currentTimeMillis()
-                            + UVCCameraHelper.SUFFIX_MP4;
-
-//                    FileUtils.createfile(FileUtils.ROOT_PATH + "test666.h264");
-                    // if you want to record,please create RecordParams like this
-                    RecordParams params = new RecordParams();
-                    params.setRecordPath(videoPath);
-                    params.setRecordDuration(0);                        // auto divide saved,default 0 means not divided
-                    params.setVoiceClose(binding.switchRecVoice.isChecked());    // is close voice
-
-                    params.setSupportOverlay(true); // overlay only support armeabi-v7a & arm64-v8a
-                    mCameraHelper.startPusher(params, new AbstractUVCCameraHandler.OnEncodeResultListener() {
-                        @Override
-                        public void onEncodeResult(byte[] data, int offset, int length, long timestamp, int type) {
-                            // type = 1,h264 video stream
-                            if (type == 1) {
-                                FileUtils.putFileStream(data, offset, length);
-                            }
-                            // type = 0,aac audio stream
-                            if(type == 0) {
-
-                            }
-                        }
-
-                        @Override
-                        public void onRecordResult(String videoPath) {
-                            if(TextUtils.isEmpty(videoPath)) {
-                                return;
-                            }
-                            new Handler(getMainLooper()).post(() -> Toast.makeText(USBCameraActivity.this, "save videoPath:"+videoPath, Toast.LENGTH_SHORT).show());
-                        }
-                    });
-                    // if you only want to push stream,please call like this
-                    // mCameraHelper.startPusher(listener);
-                    showShortMsg("start record...");
-                    binding.switchRecVoice.setEnabled(false);
-                } else {
-                    FileUtils.releaseFile();
-                    mCameraHelper.stopPusher();
-                    showShortMsg("stop record...");
-                    binding.switchRecVoice.setEnabled(true);
-                }
-                break;
-            case R.id.menu_resolution:
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened()) {
-                    showShortMsg("sorry,camera open failed");
-                    return super.onOptionsItemSelected(item);
-                }
-                showResolutionListDialog();
-                break;
-            case R.id.menu_focus:
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened()) {
-                    showShortMsg("sorry,camera open failed");
-                    return super.onOptionsItemSelected(item);
-                }
-                mCameraHelper.startCameraFoucs();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    private void showResolutionListDialog() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(USBCameraActivity.this);
-        View rootView = LayoutInflater.from(USBCameraActivity.this).inflate(R.layout.layout_dialog_list, null);
-        ListView listView = (ListView) rootView.findViewById(R.id.listview_dialog);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(USBCameraActivity.this, android.R.layout.simple_list_item_1, getResolutionList());
-        if (adapter != null) {
-            listView.setAdapter(adapter);
-        }
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                if (mCameraHelper == null || !mCameraHelper.isCameraOpened())
-                    return;
-                final String resolution = (String) adapterView.getItemAtPosition(position);
-                String[] tmp = resolution.split("x");
-                if (tmp != null && tmp.length >= 2) {
-                    int widht = Integer.valueOf(tmp[0]);
-                    int height = Integer.valueOf(tmp[1]);
-                    mCameraHelper.updateResolution(widht, height);
-                }
-                mDialog.dismiss();
-            }
-        });
-
-        builder.setView(rootView);
-        mDialog = builder.create();
-        mDialog.show();
-    }
-
-    // example: {640x480,320x240,etc}
-    private List<String> getResolutionList() {
-        List<Size> list = mCameraHelper.getSupportedPreviewSizes();
-        List<String> resolutions = null;
-        if (list != null && list.size() != 0) {
-            resolutions = new ArrayList<>();
-            for (Size size : list) {
-                if (size != null) {
-                    resolutions.add(size.width + "x" + size.height);
-                }
-            }
-        }
-        return resolutions;
     }
 
     @Override
